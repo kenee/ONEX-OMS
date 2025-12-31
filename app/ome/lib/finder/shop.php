@@ -490,15 +490,15 @@ class ome_finder_shop
         
         if ($is_binded) {
             // 已绑定：显示已绑定（可点击，高亮显示）
-            $button3 = sprintf(' | <a href="index.php?app=ome&ctl=admin_shop&act=bind_guide&shop_id=%s&finder_id=%s" target="dialog::{width:900,height:800,title:\'店铺绑定\',onClose:function(){if(window.finderGroup && window.finderGroup[\'%s\']){window.finderGroup[\'%s\'].refresh();}}}" style="color: #52c41a; font-weight: bold;">已绑定</a>', $shop_id, $finder_id, $finder_id, $finder_id);
+            $button3 = sprintf(' | <a href="index.php?app=ome&ctl=admin_shop&act=bind_guide&shop_id=%s&finder_id=%s" target="dialog::{width:930,height:800,title:\'店铺绑定\',onClose:function(){if(window.finderGroup && window.finderGroup[\'%s\']){window.finderGroup[\'%s\'].refresh();}}}" style="color: #52c41a; font-weight: bold;">已绑定</a>', $shop_id, $finder_id, $finder_id, $finder_id);
         } else {
             // 未绑定：显示申请店铺绑定按钮
-            $button3 = sprintf(' | <a href="index.php?app=ome&ctl=admin_shop&act=bind_guide&shop_id=%s&finder_id=%s" target="dialog::{width:900,height:800,title:\'申请店铺绑定\',onClose:function(){if(window.finderGroup && window.finderGroup[\'%s\']){window.finderGroup[\'%s\'].refresh();}}}">申请店铺绑定</a>', $shop_id, $finder_id, $finder_id, $finder_id);
+            $button3 = sprintf(' | <a href="index.php?app=ome&ctl=admin_shop&act=bind_guide&shop_id=%s&finder_id=%s" target="dialog::{width:930,height:800,title:\'申请店铺绑定\',onClose:function(){if(window.finderGroup && window.finderGroup[\'%s\']){window.finderGroup[\'%s\'].refresh();}}}">申请店铺绑定</a>', $shop_id, $finder_id, $finder_id, $finder_id);
         }
         
         // 支付宝绑定授权
         if ($node_type == 'taobao' && $adapter !== 'openapi') {
-            $button2 .= $row[$this->col_prefix . 'alipay_authorize'] == 'true' ? ' | 支付宝已授权' : sprintf(' | <a href="index.php?app=ome&ctl=admin_shop&act=apply_bindrelation&p[0]=%s&p[1]=%s&p[2]=%s&p[3]=pay&finder_id=%s" target="dialog::{width:800,title:\'申请店铺绑定\',onClose:function(){window.finderGroup[\'%s\'].refresh();}}">申请支付宝授权</a>', $app_id, $callback_url, $api_url, $finder_id,$finder_id);
+            $button2 .= $row[$this->col_prefix . 'alipay_authorize'] == 'true' ? ' | 支付宝已授权' : sprintf(' | <a href="index.php?app=ome&ctl=admin_shop&act=apply_bindrelation&p[0]=%s&p[1]=%s&p[2]=%s&p[3]=pay&finder_id=%s" target="dialog::{width:930,title:\'申请店铺绑定\',onClose:function(){window.finderGroup[\'%s\'].refresh();}}">申请支付宝授权</a>', $app_id, $callback_url, $api_url, $finder_id,$finder_id);
         }elseif($node_type == 'luban' && $node_id){
             //抖音平台退货地址库
             $addressObj = app::get('ome')->model('return_address');

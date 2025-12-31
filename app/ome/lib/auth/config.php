@@ -14,7 +14,10 @@ class ome_auth_config
             'desc'  => '<ul class="matrix-desc">'
                 . '<li>商派矩阵是商派提供的统一对接平台，快速对接主流电商平台（淘宝、天猫、京东、拼多多、抖音、快手等）。</li>'
                 . '<li>自动处理订单同步、库存同步、发货回传等核心功能，安全稳定，<strong>无需自研接口</strong>。</li>'
-                . '<li>首次使用赠送 <strong>500条订单流量</strong> 和 <strong>3个店铺</strong> 免费授权；超出部分按增量包购买，超过3个店铺按 <strong>350元/店铺</strong> 收费。</li>'
+                . '<li>首次使用赠送 <strong>500条订单流量</strong>，超出部分按增量包购买。</li>'
+                . '<li><strong>订单流量价格：</strong><br/>'
+                . '• 部署在商派聚石塔：<strong>1万订单/300元/年</strong>、<strong>10万订单/2000元/年</strong>、<strong>100万订单/10000元/年</strong><br/>'
+                . '• 非部署在商派聚石塔：<strong>1万订单/1500元/年</strong>、<strong>10万订单/10000元/年</strong>、<strong>100万订单/50000元/年</strong></li>'
                 . '<li>依据法律法规要求，使用商派矩阵需完成 <strong>企业实名认证</strong>。</li>'
                 . '</ul>',
         ),
