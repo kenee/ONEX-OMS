@@ -99,13 +99,13 @@ ONEX OMS 是由 [商派 ShopeX](https://www.shopex.cn) 开发并开源的企业�
 ---
 
 ## 🚀 安装快速入口
-- 浏览器安装（最快）：[部署指南 - 浏览器安装](https://op.shopex.cn/doc_oms_dev/200.install-deploy/deployment-guide.html#production-deployment)
-- 命令行安装（可脚本化）：[部署指南 - 命令行](https://op.shopex.cn/doc_oms_dev/200.install-deploy/deployment-guide.html#production-deployment)
-- Docker（生产推荐用 env，免挂载 config.php）：[部署指南 - Docker](https://op.shopex.cn/doc_oms_dev/200.install-deploy/deployment-guide.html#docker-deployment)
+- 浏览器安装（最快）：[部署指南 - 浏览器安装](https://doc.shopex.cn/oms/200.install-deploy/deployment-guide.html#production-deployment)
+- 命令行安装（可脚本化）：[部署指南 - 命令行](https://doc.shopex.cn/oms/200.install-deploy/deployment-guide.html#production-deployment)
+- Docker（生产推荐用 env，免挂载 config.php）：[部署指南 - Docker](https://doc.shopex.cn/oms/200.install-deploy/deployment-guide.html#docker-deployment)
 
 更多细节：
-- 完整部署步骤：[部署指南](https://op.shopex.cn/doc_oms_dev/200.install-deploy/deployment-guide.html)
-- 开发环境搭建：[开发者指南](https://op.shopex.cn/doc_oms_dev/100.rule/1.code.html)
+- 完整部署步骤：[部署指南](https://doc.shopex.cn/oms/200.install-deploy/deployment-guide.html)
+- 开发环境搭建：[开发者指南](https://doc.shopex.cn/oms/100.rule/1.code.html)
 
 ---
 
@@ -118,14 +118,14 @@ ONEX OMS 是由 [商派 ShopeX](https://www.shopex.cn) 开发并开源的企业�
 ---
 
 ## 🤝 贡献
-请先阅读 `.github/CONTRIBUTING.md`，了解提交流程、分支/提交规范、测试要求。更多开发规则见 [开发者指南](https://op.shopex.cn/doc_oms_dev/100.rule/1.code.html)。
+请先阅读 `.github/CONTRIBUTING.md`，了解提交流程、分支/提交规范、测试要求。更多开发规则见 [开发者指南](https://doc.shopex.cn/oms/100.rule/1.code.html)。
 
 ---
 
 ## 📞 支持
-+ **文档中心**：[https://op.shopex.cn/doc_oms_dev/100.rule/1.code.html](https://op.shopex.cn/doc_oms_dev/100.rule/1.code.html)
++ **文档中心**：[https://doc.shopex.cn/oms/100.rule/1.code.html](https://doc.shopex.cn/oms/100.rule/1.code.html)
 + **问题反馈**：[GitHub Issues](https://github.com/ShopeX/ONEX-OMS/issues)
-+ **开发指南**：[PHP编码规范](https://op.shopex.cn/doc_oms_dev/100.rule/1.code.html)
++ **开发指南**：[PHP编码规范](https://doc.shopex.cn/oms/100.rule/1.code.html)
 
 ---
 
