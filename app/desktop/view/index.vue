@@ -687,7 +687,6 @@
 <{/foreach}>
 <{desktop_footer}>
 <div class="login-footer">
-    <!-- If you remove or alter Shopex brand identifiers, you must obtain a branding removal license from Shopex.  Contact us at:  http://www.shopex.cn to purchase a branding removal license. -->
     <div class="login-footer-text">
         Powered by
         <a href="https://shopex.cn" target="_blank"><img src="<{$env.app.res_url}>/mini-logo.png" alt="oneX OMS Logo" /></a>

@@ -110,10 +110,9 @@ ONEX OMS 是由 [商派 ShopeX](https://www.shopex.cn) 开发并开源的企业�
 ---
 
 ## 📄 许可证
-本项目采用 Apache-2.0 许可证（含附加条款）。
+本项目采用 Apache-2.0 许可证。
 
 + 英文原版：[LICENSE](LICENSE)
-+ 中文翻译：[LICENSE.zh-CN](docs/LICENSE.zh-CN)
 
 ---
 
