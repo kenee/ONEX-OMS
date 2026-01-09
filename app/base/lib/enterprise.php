@@ -134,7 +134,23 @@ class base_enterprise {
 
         $signature = base64_encode(json_encode($signature_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
 
+        // 获取 node_id
+        $node_id = base_shopnode::node_id('ome');
+        
         $base = rtrim(ENTERPRISE_APPLY_URL, '/');
-        return $base . '/system/apply?signature=' . urlencode($signature);
+        
+        // 构建URL参数
+        $params = array('signature' => $signature);
+        if (!empty($node_id)) {
+            $params['node_id'] = $node_id;
+        }
+        $query_string = http_build_query($params);
+        
+        // 如果企业已经认证过了（ent_id存在），返回组织列表URL，否则返回认证URL
+        if (!empty($entId)) {
+            return $base . '/organization/list?' . $query_string;
+        }
+        
+        return $base . '/system/apply?' . $query_string;
     }
 }

@@ -194,6 +194,26 @@ class entermembercenter_callback
                 exit;
             }
         }
+        
+        // 处理 version_tier 字段
+        // version_tier 可能的值：default（老用户，此场景不会出现）、open（开源用户）、tn-open（塔内开源用户）
+        // version_tier 一直允许被更新，即使有值
+        if (isset($data['version_tier']) && !empty($data['version_tier'])) {
+            $newVersionTier = $data['version_tier'];
+            
+            // 验证 version_tier 的值是否合法
+            $allowedValues = array('default', 'open', 'tn-open');
+            if (!in_array($newVersionTier, $allowedValues)) {
+                echo json_encode(array(
+                    'rsp' => 'fail',
+                    'msg' => 'Invalid version_tier value: ' . $newVersionTier
+                ));
+                exit;
+            }
+            
+            // 直接更新 version_tier（总是允许更新）
+            app::get('entermembercenter')->setConf('version_tier', $newVersionTier);
+        }
 
         echo json_encode(array(
             'rsp' => 'succ',

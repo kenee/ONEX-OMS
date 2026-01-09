@@ -174,8 +174,13 @@ class ome_ctl_admin_shop extends desktop_controller {
         $system_node_id = base_shopnode::node_id('ome');
         $system_certificate_id = base_certificate::get('certificate_id');
         
+        // 获取 version_tier，如果为 tn-open，则按照非淘宝逻辑处理
+        $version_tier = app::get('entermembercenter')->getConf('version_tier');
+        $is_tn_open = ($version_tier == 'tn-open');
+
         // 判断是否需要奇门授权（淘系店铺：淘宝/天猫同一逻辑）
-        $is_taobao = in_array($shop['shop_type'], array('taobao', 'tmall'));
+        // 注意：如果 version_tier=tn-open，即使店铺类型是淘宝/天猫，也按照非淘宝逻辑处理
+        $is_taobao = in_array($shop['shop_type'], array('taobao', 'tmall')) && !$is_tn_open;
         $need_qimen = false;
         $is_qimen_binded = false;
         $secretKeyDisplay = '';
@@ -183,7 +188,7 @@ class ome_ctl_admin_shop extends desktop_controller {
         $qimen_channel_id = '';
         $is_super = kernel::single('desktop_user')->is_super();
         
-        // 只有淘宝店铺才需要奇门授权
+        // 只有淘宝店铺才需要奇门授权（但 tn-open 版本不需要）
         if ($is_taobao) {
             // 检查奇门聚石塔内外互通渠道是否已配置
             $channelObj = kernel::single('channel_channel');
@@ -216,14 +221,15 @@ class ome_ctl_admin_shop extends desktop_controller {
         // 节点绑定状态（只检查 node_id）
         $is_node_binded = !empty($shop['node_id']);
         
-        // 店铺绑定状态：对于淘宝店铺，需要同时满足 node_id 和奇门授权；对于非淘宝店铺，只需要 node_id
+        // 店铺绑定状态：对于淘宝店铺，需要同时满足 node_id 和奇门授权；对于非淘宝店铺（包括 version_tier=tn-open），只需要 node_id
         // 注意：步骤3（店铺绑定）的完成状态只检查 node_id，不依赖奇门授权
         // 但是最终的"店铺绑定完成"状态需要两者都完成
+        // 注意：version_tier=tn-open 时，即使店铺类型是淘宝/天猫，也按照非淘宝逻辑处理（不需要奇门授权）
         if ($is_taobao) {
             // 淘宝店铺：需要同时满足 node_id 和奇门授权才算完全绑定完成
             $is_shop_binded = $is_node_binded && $is_qimen_binded;
         } else {
-            // 非淘宝店铺：只需要 node_id
+            // 非淘宝店铺（包括 version_tier=tn-open）：只需要 node_id
             $is_shop_binded = $is_node_binded;
         }
         
